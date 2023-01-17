@@ -30546,6 +30546,42 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
+  /xuchengli/checkers/checkers/system_info:
+    get:
+      summary: Queries a SystemInfo by index.
+      operationId: XuchengliCheckersCheckersSystemInfo
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              SystemInfo:
+                type: object
+                properties:
+                  nextId:
+                    type: string
+                    format: uint64
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      tags:
+        - Query
 definitions:
   cosmos.auth.v1beta1.Params:
     type: object
@@ -52215,6 +52251,15 @@ definitions:
   xuchengli.checkers.checkers.Params:
     type: object
     description: Params defines the parameters for the module.
+  xuchengli.checkers.checkers.QueryGetSystemInfoResponse:
+    type: object
+    properties:
+      SystemInfo:
+        type: object
+        properties:
+          nextId:
+            type: string
+            format: uint64
   xuchengli.checkers.checkers.QueryParamsResponse:
     type: object
     properties:
@@ -52222,3 +52267,9 @@ definitions:
         description: params holds all the parameters of this module.
         type: object
     description: QueryParamsResponse is response type for the Query/Params RPC method.
+  xuchengli.checkers.checkers.SystemInfo:
+    type: object
+    properties:
+      nextId:
+        type: string
+        format: uint64

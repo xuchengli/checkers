@@ -1,0 +1,9 @@
+syntax = "proto3";
+package xuchengli.checkers.checkers;
+
+option go_package = "github.com/xuchengli/checkers/x/checkers/types";
+
+message SystemInfo {
+  uint64 nextId = 1; 
+  
+}
