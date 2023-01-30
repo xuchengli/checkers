@@ -52425,6 +52425,11 @@ definitions:
     title: >-
       SignatureCounts contains information about signature reporting for a
       number of blocks
+  xuchengli.checkers.checkers.MsgCreateGameResponse:
+    type: object
+    properties:
+      gameIndex:
+        type: string
   xuchengli.checkers.checkers.Params:
     type: object
     description: Params defines the parameters for the module.
