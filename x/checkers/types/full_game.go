@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/b9lab/checkers/x/checkers/rules"
+	"github.com/xuchengli/checkers/x/checkers/rules"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 )
