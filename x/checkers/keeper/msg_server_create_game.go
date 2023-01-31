@@ -30,7 +30,7 @@ func (k msgServer) CreateGame(goCtx context.Context, msg *types.MsgCreateGame) (
 
 	err := storedGame.Validate()
 	if err != nil {
-    	return nil, err
+		return nil, err
 	}
 
 	k.Keeper.SetStoredGame(ctx, storedGame)
