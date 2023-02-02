@@ -4,14 +4,14 @@ import { StdFee } from "@cosmjs/launchpad";
 import { SigningStargateClient } from "@cosmjs/stargate";
 import { Registry, OfflineSigner, EncodeObject, DirectSecp256k1HdWallet } from "@cosmjs/proto-signing";
 import { Api } from "./rest";
-import { MsgCreateGame } from "./types/checkers/tx";
 import { MsgPlayMove } from "./types/checkers/tx";
+import { MsgCreateGame } from "./types/checkers/tx";
 import { MsgRejectGame } from "./types/checkers/tx";
 
 
 const types = [
-  ["/xuchengli.checkers.checkers.MsgCreateGame", MsgCreateGame],
   ["/xuchengli.checkers.checkers.MsgPlayMove", MsgPlayMove],
+  ["/xuchengli.checkers.checkers.MsgCreateGame", MsgCreateGame],
   ["/xuchengli.checkers.checkers.MsgRejectGame", MsgRejectGame],
   
 ];
@@ -45,8 +45,8 @@ const txClient = async (wallet: OfflineSigner, { addr: addr }: TxClientOptions =
 
   return {
     signAndBroadcast: (msgs: EncodeObject[], { fee, memo }: SignAndBroadcastOptions = {fee: defaultFee, memo: ""}) => client.signAndBroadcast(address, msgs, fee,memo),
-    msgCreateGame: (data: MsgCreateGame): EncodeObject => ({ typeUrl: "/xuchengli.checkers.checkers.MsgCreateGame", value: MsgCreateGame.fromPartial( data ) }),
     msgPlayMove: (data: MsgPlayMove): EncodeObject => ({ typeUrl: "/xuchengli.checkers.checkers.MsgPlayMove", value: MsgPlayMove.fromPartial( data ) }),
+    msgCreateGame: (data: MsgCreateGame): EncodeObject => ({ typeUrl: "/xuchengli.checkers.checkers.MsgCreateGame", value: MsgCreateGame.fromPartial( data ) }),
     msgRejectGame: (data: MsgRejectGame): EncodeObject => ({ typeUrl: "/xuchengli.checkers.checkers.MsgRejectGame", value: MsgRejectGame.fromPartial( data ) }),
     
   };
